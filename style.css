@@ -1001,4 +1001,33 @@ body {
   transition: opacity 1s ease-in-out;
 }
 
+/* === YENİ ===: Şəkil üçün stillər */
+.final-image {
+  position: fixed;
+  /* Mətnin (top: 10%) altında yerləşməsi üçün top dəyərini artırdım */
+  top: 28%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9998; /* Mətnin bir az arxasında */
+  
+  /* Başlanğıcda gizli */
+  opacity: 0;
+  visibility: hidden;
+  
+  /* Görünmə effekti (mətn göründükdən 0.5s sonra başlasın) */
+  transition: opacity 1.5s ease-in-out 0.5s, visibility 1.5s ease-in-out 0.5s;
+  
+  /* Nümunə ölçü və dizayn (öz istəyinizə görə dəyişin) */
+  max-width: 250px; 
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(137, 202, 255, 0.9);
+}
+
+/* === YENİ ===: Şəkli göstərmək üçün klass */
+.final-image.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
 /*# sourceMappingURL=style.css.map */
