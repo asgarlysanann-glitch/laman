@@ -12,6 +12,9 @@ const messages = [
 ];
 
 const loveText = document.getElementById("loveText");
+// === YENİ ===: Şəkil elementini əldə edirik
+const finalImage = document.getElementById("finalImage");
+
 let index = 0;
 
 function changeMessage() {
@@ -25,9 +28,17 @@ function changeMessage() {
     if (index < messages.length - 1) {
       index++;
     } else {
+      // === YENİ ===: Sonuncu mesajdırsa...
       clearInterval(messageInterval);
+      
+      // Mətnin görünməsini gözləyib (1s) şəkli göstəririk
+      setTimeout(() => {
+        if (finalImage) { // Elementin mövcudluğunu yoxlayaq
+          finalImage.classList.add("show");
+        }
+      }, 1000); // 1000ms = 1s (mətnin 'opacity' transition müddəti)
     }
-  }, 1000);
+  }, 1000); // Mətnin yox olma müddəti
 }
 
 changeMessage();
